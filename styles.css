@@ -1,0 +1,459 @@
+/* CSS RESETS */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Root Variables */
+
+:root {
+  --bg-color: #fff;
+  --primary-100: #000;
+  --primary-200: #828282;
+  --ff: "Inter", sans-serif;
+  --fs: 1rem;
+  --fs-title: 2.5rem;
+  --fs-span: 0.875rem;
+  --fs-p: 1.125rem;
+  --fs-icon: 1.875rem;
+}
+
+/* Utility Classes */
+.flex {
+  display: flex;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.space-around {
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+/* End Utility Classes */
+
+/* Specific CSS */
+
+.navigation__bar {
+  background: var(--bg-color);
+  padding: 20px;
+  position: relative;
+}
+.navigation__left {
+  flex-grow: 0.2;
+}
+
+.navigation__brand {
+  font-family: var(--ff);
+  gap: 1rem;
+  flex-grow: 1;
+}
+
+.navigation__brand > .brand__name > h1 {
+  animation: fadeInFromRight 1s;
+}
+
+.navigation__brand > .brand__name > span {
+  color: var(--primary-200);
+  text-transform: uppercase;
+  font-size: var(--fs-span);
+  font-weight: 900;
+  animation: fadeInFromRight 1s;
+}
+
+.navigation__brand > .logo {
+  animation: rotateLogoFromLeft 1s;
+}
+
+.navigation__brand > .logo > i {
+  font-size: var(--fs-title);
+}
+
+.navigation__items {
+  list-style: none;
+  gap: 2rem;
+  font-family: var(--ff);
+}
+
+.navigation__actions {
+  list-style: none;
+  gap: 1rem;
+  font-family: var(--ff);
+}
+
+.navigation__items > .navigation__item,
+.navigation__items > .navigation__item > .dropdown__link {
+  font-weight: 700;
+  gap: 0.325rem;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.navigation__items > .navigation__item > .dot {
+  background-color: var(--primary-100);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.navigation__items > .navigation__item:hover .dot {
+  opacity: 1;
+}
+
+.navigation__items > .navigation__item > .dropdown {
+  position: relative;
+}
+
+.navigation__items > .navigation__item > .dropdown__menu {
+  width: 250px;
+  padding: 10px;
+  position: absolute;
+  top: 90px;
+  border-radius: 4px;
+  background: var(--bg-color);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  visibility: hidden;
+}
+
+.dropdown:hover .dropdown__menu {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  -moz-animation: fadein 1s;
+  -ms-animation: fadeIn 1s;
+  -o-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+.navigation__items > .navigation__item > .dropdown__menu > .dropdown__submenu {
+  list-style: none;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  gap: 0.5rem;
+}
+
+.navigation__items
+  > .navigation__item
+  > .dropdown__menu
+  > .dropdown__submenu
+  > a {
+  text-decoration: none;
+  color: var(--primary-100);
+  transition: 0.3s ease-in-out;
+}
+
+.navigation__items
+  > .navigation__item
+  > .dropdown__menu
+  > .dropdown__submenu
+  > a
+  > .dropdown__submenu__item {
+  padding: 10px;
+  font-weight: 400;
+}
+
+.navigation__actions > .join__itech,
+.navigation__actions > .profile {
+  background: var(--bg-color);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.184);
+  outline: none;
+  text-decoration: none;
+  padding: 13px 20px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.navigation__actions > *:hover,
+.navigation__items
+  > .navigation__item
+  > .dropdown__menu
+  > .dropdown__submenu
+  > a:hover {
+  background: hsla(0, 0%, 90%, 0.553);
+}
+
+.navigation__toggle {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: none;
+}
+
+.navigation__toggle > span {
+  border-radius: 50px;
+  background-color: black;
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  transition: 0.3s ease-in-out;
+}
+
+.navigation__toggle > span:nth-child(2) {
+  transform: rotate(90deg);
+}
+
+.active span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.active span:nth-child(2) {
+  transform: rotate(135deg);
+}
+
+.mobile__navigation {
+  background-color: #d9d9d9;
+  height: 100%;
+  display: none;
+  animation: fadeInFromLeft 0.5s;
+  transform-origin: left;
+  z-index: 99999;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.mobile__navigation > .mobile__nav {
+  list-style-type: none;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile__navigation > .mobile__navigation__toggle {
+  margin: 1rem 0rem;
+  cursor: pointer;
+}
+
+.mobile__navigation > .mobile__navigation__toggle > i {
+  font-size: var(--fs-icon);
+}
+
+.mobile__navigation > .mobile__nav > .mobile__nav__item {
+  font-family: var(--ff);
+  color: var(--primary-100);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: var(--fs-title);
+}
+
+.mobile__active {
+  display: flex;
+}
+
+/* MEDIA QUERIES */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .navigation__right,
+  .navigation__items {
+    display: none;
+  }
+
+  .navigation__brand {
+    margin-top: 20px;
+  }
+
+  .navigation__toggle {
+    display: flex;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .navigation__right,
+  .navigation__items {
+    display: none;
+  }
+  .navigation__brand {
+    margin-top: 20px;
+  }
+
+  .navigation__toggle {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .navigation__items {
+    display: flex;
+  }
+
+  .navigation__right {
+    display: none;
+  }
+
+  .navigation__brand {
+    margin-top: 0px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .navigation__right {
+    display: flex;
+  }
+  .navigation__brand {
+    margin-top: 0px;
+  }
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInFromLeft {
+  0% {
+    transform: translateX(-1000px);
+  }
+
+  100% {
+    width: 100%;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotateLogoFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(360deg);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

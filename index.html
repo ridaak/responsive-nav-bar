@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navigation Bar</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FONTAWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <div class="navigation__container">
+      <nav class="navigation__bar flex space-between">
+        <!-- left side of the navigation bar -->
+        <div class="navigation__left flex space-between">
+          <div class="navigation__brand flex center">
+            <div class="logo">
+              <i class="fa-solid fa-cube"></i>
+            </div>
+            <div class="brand__name flex flex-column">
+              <h1>Itech</h1>
+              <span>Tech & IT Solutions</span>
+            </div>
+          </div>
+          <ul class="navigation__items flex space-evenly">
+            <li class="navigation__item flex space-between">
+              <p>Home</p>
+              <span class="dot"></span>
+            </li>
+            <li class="navigation__item dropdown flex flex-column">
+              <div class="dropdown__link flex space-between">
+                <p>Products</p>
+                <i class="fa-solid fa-angle-down"></i>
+              </div>
+              <div class="dropdown__menu flex flex-column center">
+                <ul class="dropdown__submenu flex flex-column">
+                  <a href="products/it-consulting">
+                    <li class="dropdown__submenu__item">IT & Consulting</li>
+                  </a>
+                  <a href="products/it-management">
+                    <li class="dropdown__submenu__item">IT Management</li>
+                  </a>
+                  <a href="products/process-management">
+                    <li class="dropdown__submenu__item">Process Management</li>
+                  </a>
+                  <a href="products/pentesting">
+                    <li class="dropdown__submenu__item">Pentesting</li>
+                  </a>
+                </ul>
+              </div>
+            </li>
+            <li class="navigation__item flex space-between">
+              <p>Reviews</p>
+              <span class="dot"></span>
+            </li>
+            <li class="navigation__item flex space-between">
+              <p>Pricing</p>
+              <span class="dot"></span>
+            </li>
+          </ul>
+        </div>
+        <!-- right side of the navigation -->
+        <div class="navigation__right">
+          <ul class="navigation__actions flex">
+            <li class="navigation__item profile">
+              <i class="fa-regular fa-user"></i>
+            </li>
+            <li class="navigation__item join__itech">
+              Join Itech Hub <i class="fa-solid fa-arrow-right-long"></i>
+            </li>
+          </ul>
+        </div>
+        <!-- Toggle button (mobile version only) -->
+        <div class="navigation__toggle flex center">
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile__navigation flex center flex-column">
+      <div class="mobile__navigation__toggle">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <ul class="mobile__nav flex flex-column center">
+        <li class="mobile__nav__item">Home</li>
+        <li class="mobile__nav__item">Products</li>
+        <li class="mobile__nav__item">Reviews</li>
+        <li class="mobile__nav__item">Pricing</li>
+      </ul>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="index.js"></script>
+  </body>
+</html>
